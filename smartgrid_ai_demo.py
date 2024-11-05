@@ -7,6 +7,24 @@ import plotly.graph_objects as go
 from datetime import datetime, timedelta
 import plotly.express as px
 
+# Add error handling for sklearn import
+try:
+    from sklearn.model_selection import train_test_split
+    from sklearn.ensemble import RandomForestRegressor
+except ImportError:
+    st.error("Failed to import scikit-learn. Please check requirements.txt")
+    st.stop()
+
+# Add error handling for plotly import
+try:
+    import plotly.graph_objects as go
+    import plotly.express as px
+except ImportError:
+    st.error("Failed to import plotly. Please check requirements.txt")
+    st.stop()
+
+from datetime import datetime, timedelta
+
 # Set page config
 st.set_page_config(page_title="SmartGrid AI", page_icon="⚡", layout="wide")
 
